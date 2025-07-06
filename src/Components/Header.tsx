@@ -13,7 +13,7 @@ const Navbar = () => {
           <img
             src="https://circlebdsm.com/wp-content/uploads/2022/11/cropped-NicePng_triskelion-png_3043872-141x140.png"
             alt="logo"
-            className="w-14 h-14"
+            className="lg:w-14 lg:h-14 md:w-12 md:h-12 h-10 w-10"
           />
         </NavLink>
 
@@ -23,8 +23,8 @@ const Navbar = () => {
               to="/home"
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1 "
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1 "
               }
             >
               Home
@@ -35,8 +35,8 @@ const Navbar = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               About Us
@@ -47,8 +47,8 @@ const Navbar = () => {
               to="/services"
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               Services
@@ -59,8 +59,8 @@ const Navbar = () => {
               to="/testimonial"
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               Testimonial
@@ -71,8 +71,8 @@ const Navbar = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               Contact Us
@@ -90,7 +90,7 @@ const Navbar = () => {
       <div
         className={`${
           isOpen
-            ? "absolute left-0 w-full z-40 bg-teal-900 px-4 h-[200px]"
+            ? "absolute left-0 w-full z-40 bg-black px-4 h-[250px]"
             : "hidden"
         } md:hidden pt-6`}
       >
@@ -101,8 +101,8 @@ const Navbar = () => {
               onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               Home
@@ -114,8 +114,8 @@ const Navbar = () => {
               onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               About
@@ -127,8 +127,8 @@ const Navbar = () => {
               onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
               Services
@@ -140,11 +140,24 @@ const Navbar = () => {
               onClick={toggleMenu}
               className={({ isActive }) =>
                 isActive
-                  ? "font-bold border-b-2 border-teal-500 pb-1"
-                  : "hover:border-b-2 hover:border-teal-500 pb-1"
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
               }
             >
-              Contact
+              Testimonial
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                isActive
+                  ? "font-bold border-b-2 border-white pb-1"
+                  : "hover:border-b-2 hover:border-white pb-1"
+              }
+            >
+              Contact Us
             </NavLink>
           </li>
         </ul>
