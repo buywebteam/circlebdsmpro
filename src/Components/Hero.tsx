@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white max-w-2xl mx-4 p-8">
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 ">
           Welcome to CIRCLE BDSM{" "}
-          <span className=" bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
             PRO
           </span>
         </h1>
@@ -48,8 +48,8 @@ const Hero = () => {
           {subtitles[subtitleIndex]}
         </p>
         <Link to="/contact">
-          <button className="mt-8 px-8 py-3 bg-white text-black font-semibold text-base rounded-lg cursor-pointer">
-            Explore Dungeon Reservation
+          <button className="mt-8 px-8 py-3 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold text-base rounded-lg cursor-pointer">
+            Become a Member
           </button>
         </Link>
       </div>
