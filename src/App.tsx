@@ -8,10 +8,24 @@ import Header from "./Components/Header";
 import DungeonReservationPage from "./Pages/DungeonReservationPage";
 import ClassesPage from "./Pages/ClassesPage";
 import PlaySessionPage from "./Pages/PlaySessionPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import TelegramIcon from "./Components/TelegramIcon";
 
 function App() {
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +40,7 @@ function App() {
         <Route path="/services/classes" element={<ClassesPage />} />
         <Route path="/services/play-session" element={<PlaySessionPage />} />
       </Routes>
+      <TelegramIcon />
       <Footer />
     </>
   );
