@@ -1,4 +1,33 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 const ContactUs = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current as HTMLFormElement,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          alert("Your message has been sent successfully!");
+          if (form.current) {
+            form.current.reset();
+          }
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      );
+  };
   return (
     <section id="contact" className="bg-black text-white py-16 px-4">
       <div className="max-w-4xl mx-auto">
@@ -10,8 +39,12 @@ const ContactUs = () => {
           note club membership and dungeon reservations are not available to
           persons under 25 years old.
         </p>
+        <p className="text-center text-gray-400 mb-8">
+          You will receive a feedback mail 10-30 mins after completing this
+          form.
+        </p>
 
-        <form className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           {/* Name */}
           <div>
             <label className="block mb-1 text-sm text-gray-400">
@@ -19,6 +52,8 @@ const ContactUs = () => {
             </label>
             <input
               type="text"
+              id="full_name"
+              name="full_name"
               placeholder="Your Name"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
@@ -32,6 +67,8 @@ const ContactUs = () => {
             </label>
             <input
               type="text"
+              id="state_city"
+              name="state_city"
               placeholder="Indicate your preferred State or City"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
@@ -44,6 +81,8 @@ const ContactUs = () => {
               What can we do for you? *
             </label>
             <select
+              id="service"
+              name="service"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             >
@@ -63,9 +102,11 @@ const ContactUs = () => {
             <label className="block mb-1 text-sm text-gray-400">Age</label>
             <input
               type="number"
+              id="age"
+              name="age"
+              min="0"
               placeholder="How old are you?"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
-              min="0"
             />
           </div>
 
@@ -74,10 +115,45 @@ const ContactUs = () => {
             <label className="block mb-1 text-sm text-gray-400">Email *</label>
             <input
               type="email"
+              id="email"
+              name="email"
               placeholder="Email Address"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
+          </div>
+
+          <div>
+            <label className="block mb-1 text-sm text-gray-400">
+              Choose a Preferred Payment Method *
+            </label>
+            <select
+              id="payment_method"
+              name="payment_method"
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+              required
+            >
+              <option value="">Select an option</option>
+              <option value="Paypal">Paypal</option>
+              <option value="Cashapp">Cashapp</option>
+              <option value="Bitcoin">Bitcoin</option>
+              <option value="Giftcard">Giftcard</option>
+            </select>
+          </div>
+          <div>
+            <label className="block mb-1 text-sm text-gray-400">
+              Leave a note for us (installment details, if any)
+            </label>
+            <textarea
+              id="installment_note"
+              name="installment_note"
+              placeholder="If you wish to make the payments in installments, describe how (max 2 parts)."
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+              rows={4}
+            ></textarea>
+            <p className="text-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent mt-1">
+              NOTE: Payments in installments cannot be more than 2 parts.
+            </p>
           </div>
 
           {/* Message */}
@@ -86,6 +162,8 @@ const ContactUs = () => {
               Message *
             </label>
             <textarea
+              id="message"
+              name="message"
               placeholder="Your message here"
               className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
               rows={5}
