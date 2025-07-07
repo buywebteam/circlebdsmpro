@@ -12,20 +12,20 @@ const Services = () => {
           {/* Dungeon Reservation */}
           <Link to="/services/dungeon-reservation">
             {" "}
-            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-gray-800 h-96 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow ">
               <img
                 src="/b6.jpg"
                 alt="Dungeon Reservation"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-6">
+              <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
                   Dungeon Reservation
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Rent a luxury private dungeon near you and make all your kink
-                  fantasies come true. Fill in the contact form to find out if
-                  there is any around you to play with.
+                  fantasies come to life. Fill in the contact form to find out
+                  if there is any place near you.
                 </p>
               </div>
             </div>
@@ -33,13 +33,13 @@ const Services = () => {
           {/* Classes */}
           <Link to="/services/classes">
             {" "}
-            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-gray-800 h-96 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img
                 src="/b8.jpg"
                 alt="Classes"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-6">
+              <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
                   Classes
                 </h3>
@@ -54,13 +54,13 @@ const Services = () => {
           {/* Play Session */}
           <Link to="/services/play-session">
             {" "}
-            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-gray-800 h-96 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img
                 src="/b9.jpg"
                 alt="Play Session"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-6">
+              <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
                   Play Session
                 </h3>
